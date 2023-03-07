@@ -55,7 +55,6 @@ class request {
 
             //crÃ©ation d'un nouveau string avec comme sÃ©parateur une virgule
             let newKeywords = tab.join(',');
-
             //set de la nouvelle valeur
             this._keywords = newKeywords;
         }
@@ -79,7 +78,6 @@ class request {
         }else{
             //on remplace tous les espaces par des virgules
             let newTitle = title.replace(' ', ',');
-            
             //set de la nouvelle valeur de title
             this._title = newTitle;
         }
