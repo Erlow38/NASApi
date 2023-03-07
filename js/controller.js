@@ -1,5 +1,5 @@
 //Initialisation de l'objet de requête
-let request = new Request();
+let recherche = new Recherche();
 
 //### Initialisation des events listeners ###
 // - Pour le bouton de recherche de misions
@@ -8,9 +8,9 @@ view.missionSearchButton.addEventListener("click", function() {
     //On récupère la valeur de la barre de recherche
     let searchValue = view.missionSearchBar.value;
     //On set la valeur de la recherche dans l'objet
-    request.setTitle(searchValue);
+    recherche.setTitle(searchValue);
     //On lance la recherche
-    request.search();
+    recherche.search();
 });
 
 // - Pour le bouton de recherche de photographes
@@ -18,9 +18,9 @@ view.photographerSearchButton.addEventListener("click", function() {
     //On récupère la valeur de la barre de recherche
     let searchValue = view.photographerSearchBar.value;
     //On set la valeur de la recherche dans l'objet
-    request.setPhotographer(searchValue);
+    recherche.setPhotographer(searchValue);
     //On lance la recherche
-    request.search();
+    recherche.search();
 });
 
 // - Pour le bouton de recherche de mots clés
@@ -28,7 +28,7 @@ view.keywordsSearchButton.addEventListener("click", function() {
     //On récupère la valeur de la barre de recherche
     let searchValue = view.keywordsSearchBar.value;
     //On set la valeur de la recherche dans l'objet
-    request.setKeywords(searchValue);
+    recherche.setKeywords(searchValue);
     //On lance la recherche
-    request.search();
+    recherche.search();
 });

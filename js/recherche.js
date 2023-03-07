@@ -1,8 +1,8 @@
 /**
- * La classe request pour construire l'objet 
+ * La classe recherche pour construire l'objet 
  * correspondant Ã Ã  la requÃªte de l'api
  */
-class request {
+class Recherche {
     /**
      * Contient les mots clÃ©s
      * @type {string}
@@ -23,8 +23,8 @@ class request {
 
     constructor() {
         this._keywords = "";
-        this._title = "";
         this._photographer = "";
+        this._title = "";
     }
 
     /**
