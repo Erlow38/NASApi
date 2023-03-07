@@ -1,168 +1,89 @@
-/* Importation de la police Roboto */
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-
-/* Définition des principales couleurs */
 :root {
-  --text-color: #fafafa; /* (Texte presque blanc) */
-  --background: #34495e; /* (Fond bleu foncé) */
-  --background-button: #bebebe;
-  --main-green: rgb(26, 188, 156);
-  --active-green: rgb(20, 156, 128);
-  --almost-black: #2d2d2d;
+    --main : #fff;
+    --blue : #2b4e7f;
 }
-
 * {
-  color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "Playfair Display", serif;
 }
-
 body {
-  background-color: var(--background);
-  font: 14pt Roboto, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 90%;
-  margin: 40px auto;
+    background: url(https://cdn.futura-sciences.com/sources/52049541823_302331a679_k.jpg), no-repeat, center, fixed;
+    background-size: cover;
+    height: 100vh;
 }
-
-/* Paragraphes "Aucun résultat..." et "Aucune recherche..." */
-p.info-vide {
-  font-style: italic;
+.hero {
+    background: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-/* Partie En-tête */
-h1 {
-  text-align: center;
-  font-variant: small-caps;
-  font-size: 2.5em;
-  color: var(--main-green);
+.hero h1 {
+    font-size: 4em;
+    color: #fff;
+    margin-bottom: 1em;
 }
-
-#explication {
-  font-size: 1.2em;
+.button {
+    position: relative;
+    padding: 10px 64px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #fafafa;
+    border: solid 3px rgba(250, 250, 250, 0.9);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
-/* Conteneur principal */
-#conteneur {
-  display: flex;
-  flex: 1;
-  margin: 30px auto;
+.button:active {
+    scale: 0.9;
 }
-
-/* Section Recherche (avec résultats) */
-#section-recherche {
-  margin-top: 0;
-  flex: 1 1 auto;
+.button .button-text {
+    position: relative;
+    font-size: 1.5em;
+    z-index: 2;
 }
-
-#bloc-recherche {
-  display: flex;
-  margin: 0 auto;
-  min-width: 450px;
-  flex-direction: row;
+.button .fill-container {
+    position: absolute;
+    background-color: var(--blue);
+    left: 0;
+    top: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    transform: translateY(-50%) rotate(180deg);
 }
-
-#bloc-recherche > input[type="text"],
-#bloc-recherche > button {
-  display: block;
-  font-size: 1.2em;
+.button .fill-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main);
+    border-radius: 50%;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(-100%);
 }
-
-#bloc-recherche > input[type="text"] {
-  color: var(--almost-black);
-  flex: 1;
-  padding: 0.7em;
-  border: 0.3em solid var(--main-green);
+.button:hover {
+    color: black;
+    border-color: var(--main);
+    transform: translateY(-4px);
 }
-
-#bloc-recherche > button {
-  padding: 0.8em 0.8em;
-  /* Bordure invisible pour que le hover ne bouge pas le bouton */
-  border: 1px solid var(--main-green);
-
-  /* Par défaut, les boutons sont en gris
-	 (S'ils sont "clicables", ils passent en vert) */
-  background-color: var(--background-button);
+.button:hover .fill-container {
+    transform: translateY(-50%) rotate(0);
 }
-
-/* Apparences des boutons clicables */
-#bloc-recherche > button.btn_clicable {
-  background-color: var(--main-green);
+.button:hover .fill-container::after {
+    transform: translateY(0);
 }
-
-#bloc-recherche > button:focus {
-  /* Pour éviter un affichage disgracieux
-		quand le bouton reste en focus */
-  outline: 0 !important;
+.searchbar {
+    padding: 10px;
+    width: 20%;
+    border-radius: 10px;
+    transition : all 0.5s ease;
+    font-size: 1em;
 }
+  
 
-#bloc-recherche > button.btn_clicable:hover {
-  cursor: pointer;
-  border: 1px solid white;
-}
-
-#bloc-recherche > button.btn_clicable:active {
-  background-color: var(--active-green);
-}
-
-/* GIF de chargement (caché par défaut) */
-#bloc-gif-attente {
-  display: none;
-  margin: 40px;
-  text-align: center;
-}
-
-#bloc-resultats p.res::before {
-  /* Affichage d'une flèche devant chaque résultat
-		(Cf. https://unicode-table.com/fr/21E8/ ) */
-  content: "\21E8\00A0";
-}
-
-/* Section de la barre de séparation */
-#section-separation {
-  border-left: 2px dashed var(--main-green);
-  margin: 0 20px;
-}
-
-/* Section des recherches favorites */
-#section-favoris {
-  flex: 0 0 300px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-#section-favoris h2 {
-  margin-top: 0;
-}
-
-#section-favoris p {
-  margin-bottom: 8px;
-}
-
-#liste-favoris li {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-#liste-favoris li span {
-  text-decoration: underline;
-}
-
-#liste-favoris li span:hover {
-  color: var(--main-green);
-}
-
-/* Media-query pour gérer l'affichage sur petit écran */
-@media (max-width: 900px) {
-  #conteneur {
-    flex-direction: column-reverse;
-  }
-
-  #section-separation {
-    border-top: 2px dashed var(--main-green);
-    margin: 0 -10px 40px -10px;
-  }
-
-  #section-favoris {
-    flex: 0;
-  }
-}
