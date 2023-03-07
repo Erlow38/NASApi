@@ -229,8 +229,8 @@
     scale: 0.9;
 }
 .searchbar-container img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
 }
 .searchbar {
@@ -300,6 +300,10 @@
     .search-container button {
         width: 100px;
         height: 100px;
+    }
+    .searchbar-container img {
+        width: 50px;
+        height: 50px;
     }
     .searchbar {
         width: 500px;
