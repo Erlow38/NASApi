@@ -133,6 +133,12 @@
     margin-bottom: 1em;
     text-align: justify;
 }
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .cat-btn {
     transform: rotate(-10deg);
     border-radius: 150px;
@@ -194,3 +200,34 @@
 
 
 
+/*mobile*/
+
+@media screen and (max-width: 992px) {
+    .container h1 {
+        text-align: center;
+        padding: 0 10%;
+    }
+    .btn {
+        font-size: 2em;
+    }
+    .hero-container {
+        flex-direction: column;
+    }
+    .btn-container {
+        width: 100%;
+        height: 60%;
+    }
+    .desc {
+        width: 100%;
+        height: 40%;
+        padding: 5%;
+    }
+    .desc h2 {
+        margin-top: 5%;
+        font-size: 5em;
+        height: 40%;
+    }
+    .desc p {
+        font-size: 2.5em;
+    }
+}
