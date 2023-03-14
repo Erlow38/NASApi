@@ -234,6 +234,12 @@
         transform: rotate(360deg);
     }
 }
+.earth-container {
+    min-height: 100vh;
+}
+.earth-container iframe {
+    min-height: 100vh;
+}
 .easteregg {
     position: absolute;
     top: 10px;
