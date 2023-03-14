@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NASApi</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://graphiste.com/blog/wp-content/uploads/sites/4/2019/08/1920px-NASA_logo.svg-e1567160347263.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+    <body class="earth">
+    <div class="transition transition-slide is-active"></div>
+    <a class="easteregg" href="earth.html" title="Cliquez pour voir une surprise !"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Terra.png" alt=""></a>
+    <div class="hero-container">
+        <div class="desc">
+            <h2>Rechercher une image par mots clés, missions ou encore par photographe.</h2>
+            <div class="searchbar-container">
+                <input id="search-bar" class="searchbar" type="search" placeholder="Chercher une mission">
+                <button id="search-button"><img src="https://cdn-icons-png.flaticon.com/512/116/116836.png" alt=""></button>
+                <button><img src="https://cdn-icons-png.flaticon.com/512/126/126482.png" alt=""></button>
+            </div>
+            <h3>Vos recherches favorites</h3>
+            <div class="fav-container">
+                <div class="fav">
+                    <p>Recherche 1</p>
+                    <button class="fav-btn">×</button>
+                </div>
+                <div class="fav">
+                    <p>Recherche 2</p>
+                    <button class="fav-btn">×</button>
+                </div>
+                <div class="fav">
+                    <p>Recherche 3</p>
+                    <button class="fav-btn">×</button>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="cat-btn" id="cat-2"><div class="opacity"><p>Missions</p></div></button>
+            <button class="cat-btn" id="cat-1"><div class="opacity"><p>Mots clés</p></div></button>
+            <button class="cat-btn" id="cat-3"><div class="opacity"><p>Photographes</p></div></button>
+        </div>
+    </div>
+</body>
+<script src="../style/transition.js"></script>
+<script src="../js/recherche.js"></script>
+<script src="../js/view.js"></script>
+<script src="../js/controller.js"></script>
+</html>

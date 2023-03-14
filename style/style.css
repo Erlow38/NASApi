@@ -128,15 +128,45 @@
     font-size: 3em;
     margin-bottom: 1em;
 }
-.desc p {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-    text-align: justify;
+.desc h3 {
+    font-size: 2em;
+    margin: 1em 0;
 }
 .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+}
+.fav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.fav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    background-color: var(--main);
+    border-radius: 20px;
+    margin: 10px;
+}
+.fav p {
+    font-size: 1em;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    margin: 0;
+    align-items: center;
+    color: #000;
+}
+.fav-btn {
+    width: 30px;
     height: 100%;
 }
 .cat-btn {
@@ -199,16 +229,30 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/*search page*/
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
+.easteregg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    animation: rotate 10s linear infinite;
+}
+.easteregg img {
+    width: 70px;
+}
+.bg-3d {
+    background: url("https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*searchbar page*/
+
 .searchbar-container {
     display: flex;
     justify-content: center;
@@ -219,13 +263,14 @@
     border-radius: 20px;
     background-color: #cdcdcd;
 }
-.search-container button {
-    width: 50px;
-    height: 50px;
+.searchbar-container button {
+    
+    width: 70px;
+    height: 100%;
     border: none;
     cursor: pointer;
 }
-.search-container button:active {
+.searchbar-container button:active {
     scale: 0.9;
 }
 .searchbar-container img {
@@ -235,12 +280,15 @@
 }
 .searchbar {
     padding: 10px 20px;
-    width: 400px;
+    width: 100%;
     height: 50px;
     border-radius: 20px 0 0 20px;
     font-size: 1em;
     border: none;
 }
+
+/*affichage resultat*/
+
 .back {
     position: absolute;
     display: flex;
@@ -263,35 +311,7 @@
     margin: 10px;
     width: 60px;
 }
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.easteregg {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 100;
-    animation: rotate 10s linear infinite;
-}
-.easteregg img {
-    width: 70px;
-}
-.bg-3d {
-    background: url("https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.sketchfab-embed-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-}
+
 
 /*mobile*/
 
@@ -308,34 +328,42 @@
     }
     .btn-container {
         width: 100%;
-        height: 60%;
+        height: 40%;
     }
     .desc {
         width: 100%;
-        height: 40%;
+        height: 50%;
         padding: 5%;
     }
     .desc h2 {
         margin-top: 5%;
         font-size: 5em;
-        height: 40%;
     }
-    .desc p {
+    .desc h3 {
         font-size: 2.5em;
+    }
+    .fav-container {
+        flex-direction: row;
+        height: 20%;
+    }
+    .fav {
+        width: 300px;
+        height: 60px;
+    }
+    .fav p {
+        font-size: 1.5em;
     }
     .searchbar-container {
         height: 100px;
     }
-    .search-container button {
-        width: 100px;
-        height: 100px;
+    .searchbar-container button {
+        width: 150px;
     }
     .searchbar-container img {
         width: 50px;
         height: 50px;
     }
     .searchbar {
-        width: 500px;
         height: 100px;
         font-size: 2em;
     }
