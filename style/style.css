@@ -13,6 +13,7 @@
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: "Playfair Display", serif;
+    scroll-behavior: smooth;
 }
 
 /*transition*/
@@ -360,6 +361,19 @@
 .back img {
     margin: 10px;
     width: calc(10px + 1vw);
+}
+
+/* scroll up*/ 
+
+.scrollUp {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    transition: all 0.2s ease 0s;
+}
+.scrollUp:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s ease 0s;
 }
 
 
