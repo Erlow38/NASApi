@@ -436,6 +436,11 @@
     .fav a {
         font-size: 1.5em;
     }
+    .fav-btn {
+        font-size: 2em;
+        width: 60px;
+        height: 60px;
+    }
     .searchbar-container {
         height: 100px;
     }
