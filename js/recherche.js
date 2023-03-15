@@ -78,11 +78,10 @@ class Recherche {
     deleteFav(fav) {
         //parcours de l'array des favoris
         for (let i = 0; i < this._favs.length; i++) {
-            console.log(this._favs[i]);
             //si le favoris est trouvé
             if (this._favs[i] == fav) {
                 //suppression du favoris
-                this._favs.splice(i);
+                this._favs.splice(i,1);
             }
         }
     }
