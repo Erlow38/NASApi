@@ -13,8 +13,14 @@ class Recherche {
      */
     _input;
 
+    /**
+     *  
+     */
+    _result;
+
     constructor() {
         this._input = "";
+        this._result = {};
     }
 
     /**
@@ -30,7 +36,16 @@ class Recherche {
      * @param {string} input
     */
     setInput(input) {
-        this._input = input;
+        //remplacement des espaces par des ,
+        this._input = input.replace(/ /g, ",");
+    }
+
+    getResults() {
+        return this._result;
+    }
+
+    setResults(result) {
+        this._result = result;
     }
 
     /**
@@ -49,18 +64,18 @@ class Recherche {
         this._photographer = photographer;
     }
 
-    async search() {
+    search() {
         // Récupère les infos du contact ayant le nom 'rave'
-        fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=5&title=" + this._input)
+        return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=5&title=" + this._input)
         .then((responseObj) => responseObj.json())
         .then((data) => {
             let tab = data.collection.items;
             let associatedTab = {};
             tab.forEach(element => {
-                associatedTab = {"title": element.data[0].title, "description": element.data[0].description, "url": element.links[0].href};
+                associatedTab[element.data[0].title] = {"description": element.data[0].description, "url": element.links[0].href};
             })
-            this.setInput(associatedTab);
-            console.log(this.getInput());
+            this.setResults(associatedTab);
+            console.log(this.getResults());
         })
         .catch((err) => console.error(err));
     }
