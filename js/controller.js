@@ -16,3 +16,22 @@ view.SearchButton.addEventListener("click", function() {
         view.updateFrom(recherche);
     });
 });
+
+// - Pour le bouton de favoris
+view.favButton.addEventListener("click", function() {
+    //Récupération de la valeur de la barre de recherche
+    let searchValue = view.SearchBar.value;
+    //ajout dans la liste des favoris
+    recherche.addFav(searchValue);
+    console.log(recherche.getFavs());
+    //Mis à jour de la vue
+    view.updateFavFrom(recherche);
+});
+
+let deleteClickListeners = function(event) {
+    console.log("ouaiss");
+    //Suppression du favoris
+    recherche.deleteFav(event.target.value);
+    //Mis à jour de la vue
+    view.updateFavFrom(recherche);
+}

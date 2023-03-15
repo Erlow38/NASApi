@@ -164,7 +164,7 @@
     border-radius: 20px;
     margin: 10px;
 }
-.fav p {
+.fav a {
     font-size: calc(0.2em + 0.5vw);
     display: flex;
     height: 100%;

@@ -17,11 +17,12 @@ class Recherche {
      * Les boutons de favoris
      * @type {Array}
     */
-    _favButtons;
+    _favs;
 
     constructor() {
         this._input = "";
         this._result = {};
+        this._favs = [];
     }
 
     /**
@@ -61,13 +62,30 @@ class Recherche {
      * Retourne les boutons de favoris
      * @returns {Array}
     */
-    getFavButtons() {
-        return this._favButtons;
+    getFavs() {
+        return this._favs;
     }
 
-    setFavButtons(favButtons) {
+    /**
+     * Ajoute un bouton de favoris
+     * @param {string} fav
+     * @returns {void}
+    */
+    addFav(fav) {
+        this._favs.push(fav);
     }
 
+    deleteFav(fav) {
+        //parcours de l'array des favoris
+        for (let i = 0; i < this._favs.length; i++) {
+            console.log(this._favs[i]);
+            //si le favoris est trouvé
+            if (this._favs[i] == fav) {
+                //suppression du favoris
+                this._favs.splice(i);
+            }
+        }
+    }
 
     search() {
         // Récupère les infos du contact ayant le nom 'rave'

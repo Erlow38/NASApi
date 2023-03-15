@@ -15,6 +15,12 @@ const view = {
     // Bouton de favoris
     favButton: document.querySelector("#fav-button"),
 
+    //Output favoris
+    favOutput: document.querySelector(".fav-container"),
+
+    // Bouton suppression favoris
+    favDeleteButtons: document.querySelectorAll(".fav-btn") || "",
+
     updateFrom(recherche) {
         this.output.innerHTML = "";
         //Vérification qu'il y a des résultats
@@ -46,6 +52,29 @@ const view = {
                 description.innerHTML = value.description;
                 image.setAttribute("src", value.url);
             }
+        }
+    },
+
+    updateFavFrom(recherche) {
+        this.favOutput.innerHTML = "";
+        //boucle de parcours de l'input
+        for(let i = 0; i < recherche.getFavs().length; i++) {
+            //Création de plusieurs éléments html pour afficher les résultats
+            let fav = document.createElement("div");
+            let favText = document.createElement("a");
+            let favDeleteButton = document.createElement("button");
+            //Ajout des classes css
+            fav.setAttribute("class", "fav");
+            favDeleteButton.setAttribute("class", "fav-btn");
+            //ajout de l'event listener
+            favDeleteButton.addEventListener("click", deleteClickListeners);
+            //Ajout des enfants à la div principal
+            this.favOutput.appendChild(fav);
+            fav.appendChild(favText);
+            fav.appendChild(favDeleteButton);
+            //ajout des valeurs dans les éléments html
+            favText.innerHTML = recherche.getFavs()[i];
+            favDeleteButton.innerHTML = "×";
         }
     },
 }
