@@ -1,5 +1,3 @@
-import { Recherche } from "./recherche.js";
-
 //Initialisation de l'objet de requête
 let recherche = new Recherche();
 
@@ -13,8 +11,6 @@ view.SearchButton.addEventListener("click", function() {
     recherche.setInput(searchValue);
     //On lance la recherche
     recherche.search();
-     //Redirection vers la page de résultats
-     window.location.href = "result.html";
     //Mis à jour de la vue
     view.updateFrom(recherche);
 });
