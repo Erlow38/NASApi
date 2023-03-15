@@ -1,20 +1,29 @@
 //objet contenant la vue
 const view = {
-    // Barre de recherche de missions
-    missionSearchBar: document.getElementById("mission-search-bar"),
+    // Barre de recherche 
+    SearchBar: document.querySelector("#search-bar"),
 
-    // Barre de recherche de photographes
-    photographerSearchBar: document.getElementById("photographer-search-bar"),
+    // Bouton de recherche 
+    SearchButton: document.querySelector("#search-button"),
 
-    // Barre de recherche de mots clés
-    keywordsSearchBar: document.getElementById("keywords-search-bar"),
+    //Output
+    output: document.querySelector(".result-content"),
 
-    //Bouton de recherche de missions
-    missionSearchButton: document.getElementById("mission-search-button"),
+    updateFrom(recherche) {
+        let result = document.createElement("div");
+        let title = document.createElement("h2");
+        let description = document.createElement("p");
+        let image = document.createElement("img");
 
-    // Bouton de recherche de photographes
-    photographerSearchButton: document.getElementById("photographer-search-button"),
+        title.setAttribute("class", "result-title");
+        description.setAttribute("class", "result-description");
+        image.setAttribute("class", "result-image");
 
-    // Bouton de recherche de mots clés
-    keywordsSearchButton: document.getElementById("keywords-search-button"),
+        this.output.appendChild(result);
+        result.appendChild(title);
+        result.appendChild(description);
+        result.appendChild(image);
+
+        title.innerHTML = recherche.getInput().title;
+    },
 }
