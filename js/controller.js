@@ -5,7 +5,7 @@ let recherche = new Recherche();
 
 //### Initialisation des events listeners ###
 // - Pour le bouton de recherche de misions
-view.missionSearchButton.addEventListener("click", function() {
+view.SearchButton.addEventListener("click", function() {
     console.log("ouaissss");
     //On récupère la valeur de la barre de recherche
     let searchValue = view.SearchBar.value;
