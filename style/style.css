@@ -137,7 +137,7 @@
     margin-bottom: calc(1.5em + 0.5vw);
 }
 .desc h3 {
-    font-size: calc(0.5em + 0.5vw);
+    font-size: calc(0.7em + 0.5vw);
     margin: calc(0.5em + 0.5vw) 0;
 }
 .btn-container {
@@ -175,6 +175,9 @@
     margin: 0;
     align-items: center;
     color: #000;
+}
+.fav a {
+    font-size: calc(0.2em + 0.5vw);
 }
 .fav-btn {
     width: 30px;
@@ -360,9 +363,10 @@
     font-size: 1.5em;
     color: var(--main);
 }
-.back img {
+.back svg {
     margin: 10px;
-    width: calc(10px + 1vw);
+    width: calc(20px + 1vw);
+    height: calc(20px + 1vw);
 }
 
 /* scroll up*/ 
@@ -376,6 +380,10 @@
 .scrollUp:hover {
     transform: translateY(-5px);
     transition: all 0.2s ease 0s;
+}
+.scrollUp svg {
+    width: calc(30px + 1vw);
+    height: calc(30px + 1vw);
 }
 
 
@@ -416,7 +424,7 @@
         width: 300px;
         height: 60px;
     }
-    .fav p {
+    .fav a {
         font-size: 1.5em;
     }
     .searchbar-container {
@@ -437,13 +445,22 @@
         top: 1%;
         left: 1%;
     }
-    .back img {
+    .back svg {
         width: 100px;
+        height: 100px;
     }
     .back p {
-        font-size: 2.2em;
+        font-size: 2.5em;
+    }
+    .easteregg {
+        top: 40px;
+        left: 85%;
     }
     .easteregg img {
         width: 100px;
+    }
+    .scrollUp svg {
+        width: 100px;
+        height: 100px;
     }
 }
