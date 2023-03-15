@@ -8,6 +8,7 @@ view.SearchButton.addEventListener("click", function() {
     let searchValue = view.SearchBar.value;
     //On set la valeur de la recherche dans l'objet
     recherche.setInput(searchValue);
+    console.log(recherche.getInput());
     //On lance la recherche
     recherche.search()
     .then(() => {
@@ -15,4 +16,3 @@ view.SearchButton.addEventListener("click", function() {
         view.updateFrom(recherche);
     });
 });
-

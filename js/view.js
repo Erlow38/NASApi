@@ -12,7 +12,11 @@ const view = {
     // Chaine si pas de resultat
     noResult: document.querySelector("#no-result"),
 
+    // Bouton de favoris
+    favButton: document.querySelector("#fav-button"),
+
     updateFrom(recherche) {
+        this.output.innerHTML = "";
         //Vérification qu'il y a des résultats
         if (Object.keys(recherche.getResults()).length === 0) {
             this.noResult.innerHTML = "Aucun résultat";

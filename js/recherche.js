@@ -4,19 +4,20 @@
  */
 class Recherche {
     /**
-     * @type {string}
-    
-    _photographer;
-
-    /**
-     * 
+     * Le champs écrit par l'utilisateur
      */
     _input;
 
     /**
-     *  
+     * L'objet retourné par l'api
      */
     _result;
+
+    /**
+     * Les boutons de favoris
+     * @type {Array}
+    */
+    _favButtons;
 
     constructor() {
         this._input = "";
@@ -40,29 +41,33 @@ class Recherche {
         this._input = input.replace(/ /g, ",");
     }
 
+    /**
+     * Retourne les résultats de la recherche
+     * @returns {object}
+    */
     getResults() {
         return this._result;
     }
 
+    /**
+     * Nouveau résultat de la recherche
+     * @param {object} result
+    */
     setResults(result) {
         this._result = result;
     }
 
     /**
-     * Retourne la chaÃ®ne de caratÃ¨re photographer
-     * @returns {string}
-     */
-    getPhotographer() {
-        return this._photographer;
+     * Retourne les boutons de favoris
+     * @returns {Array}
+    */
+    getFavButtons() {
+        return this._favButtons;
     }
 
-    /**
-     * Nouvelle valeur de photographer
-     * @param {} photographer 
-     */
-    setPhotographer(photographer) {
-        this._photographer = photographer;
+    setFavButtons(favButtons) {
     }
+
 
     search() {
         // Récupère les infos du contact ayant le nom 'rave'
