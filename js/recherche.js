@@ -1,3 +1,4 @@
+export { Recherche };
 /**
  * La classe recherche pour construire l'objet 
  * correspondant Ã Ã  la requÃªte de l'api
