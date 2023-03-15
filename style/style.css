@@ -308,7 +308,6 @@
     color: rgb(252, 85, 85);
 }
 .result-container {
-    min-height: 100vh;
     color: var(--main);
 }
 .result-content {
