@@ -57,8 +57,9 @@
     margin-bottom: 1em;
 }
 .btn {
+    font-size: calc(0.2em + 0.5vw);
     position: relative;
-    padding: 10px 64px;
+    padding: calc(0.5em + 0.5vw) calc(1.5em + 1vw);
     border-radius: 20px;
     background-color: transparent;
     color: #fafafa;
@@ -273,7 +274,7 @@
 }
 .searchbar-container button {
     
-    width: 70px;
+    width: calc(20px + 2vw);
     height: 100%;
     border: none;
     cursor: pointer;
@@ -282,8 +283,8 @@
     scale: 0.9;
 }
 .searchbar-container img {
-    width: 20px;
-    height: 20px;
+    width: calc(10px + 1vw);
+    height: calc(10px + 1vw);
     object-fit: cover;
 }
 .searchbar {
@@ -291,7 +292,7 @@
     width: 100%;
     height: calc(10px + 2vw);
     border-radius: 20px 0 0 20px;
-    font-size: 1em;
+    font-size: calc(0.5em + 0.5vw);
     border: none;
 }
 
@@ -317,7 +318,7 @@
 }
 .back img {
     margin: 10px;
-    width: 60px;
+    width: calc(10px + 1vw);
 }
 
 
@@ -325,6 +326,7 @@
 
 @media screen and (max-width: 992px) {
     .container h1 {
+        font-size: 5em;
         text-align: center;
         padding: 0 10%;
     }
@@ -335,8 +337,7 @@
         flex-direction: column;
     }
     .btn-container {
-        width: 100%;
-        height: 40%;
+        display: none;
     }
     .desc {
         width: 100%;
@@ -384,5 +385,8 @@
     }
     .back p {
         font-size: 2.2em;
+    }
+    .easteregg img {
+        width: 100px;
     }
 }
