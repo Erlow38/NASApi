@@ -17,6 +17,7 @@ const view = {
         if (Object.keys(recherche.getResults()).length === 0) {
             this.noResult.innerHTML = "Aucun résultat";
         }else{
+            this.noResult.innerHTML = "";
             //boucle de parcours de l'input
             for (const [key, value] of Object.entries(recherche.getResults())) {
                 //Création de plusieurs éléments html pour afficher les résultats
