@@ -66,7 +66,7 @@ class Recherche {
 
     search() {
         // Récupère les infos du contact ayant le nom 'rave'
-        return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=5&title=" + this._input)
+        return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=10&title=" + this._input)
         .then((responseObj) => responseObj.json())
         .then((data) => {
             let tab = data.collection.items;

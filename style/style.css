@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: "Playfair Display", serif;
 }
 
@@ -41,11 +41,10 @@
 .earth {
     background: url(https://cdn.futura-sciences.com/sources/52049541823_302331a679_k.jpg), no-repeat, center, fixed;
     background-size: cover;
-    height: 100vh;
 }
 .container {
     background: rgba(0, 0, 0, 0.3);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,10 +112,17 @@
 
 .hero-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(0, 0, 0, 0.4);
+}
+.hero-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 .desc {
     display: flex;
@@ -258,9 +264,6 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/*searchbar page*/
-
 .searchbar-container {
     display: flex;
     justify-content: center;
@@ -297,6 +300,39 @@
 }
 
 /*affichage resultat*/
+
+.result-container {
+    min-height: 100vh;
+    color: var(--main);
+}
+.result-content {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border-radius: 10px;
+    border: 3px solid var(--main);
+    border-radius: calc(1em + 0.5vw);
+    padding: calc(1em + 0.5vw);
+    margin: calc(1em + 0.5vw);
+}
+.result-content a {
+    text-decoration: none;
+    color: #181818;
+}
+.result-content a:hover {
+    text-decoration: underline;
+}
+.result-title {
+    font-size: calc(1em + 0.5vw);
+    font-weight: bold;
+    margin-bottom: calc(0.5em + 0.5vw);
+}
+.result-image {
+    object-fit: cover;
+    border-radius: calc(1em + 0.5vw);
+    margin-top: calc(1em + 0.5vw);
+}
 
 .back {
     position: absolute;

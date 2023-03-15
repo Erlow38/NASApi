@@ -9,9 +9,11 @@ const view = {
     //Output
     output: document.querySelector(".result-container"),
 
+    // Chaine si pas de resultat
+    noResult: document.querySelector("#no-result"),
+
     updateFrom(recherche) {
         //boucle de parcours de l'input
-        console.log(recherche.getResults());
         for (const [key, value] of Object.entries(recherche.getResults())) {
             //Création de plusieurs éléments html pour afficher les résultats
             let result = document.createElement("div");

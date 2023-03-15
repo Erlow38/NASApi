@@ -10,13 +10,15 @@
     <div class="transition transition-slide is-active"></div>
     <a class="easteregg" href="earth.html" title="Cliquez pour voir une surprise !"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Terra.png" alt=""></a>
     <div class="hero-container">
-        <div class="desc">
+        <div class="hero-content">
+            <div class="desc">
             <h2>Rechercher une image par mots clés, missions ou encore par photographe.</h2>
             <div class="searchbar-container">
                 <input id="search-bar" class="searchbar" type="search" placeholder="Chercher une image">
                 <button id="search-button"><img src="https://cdn-icons-png.flaticon.com/512/116/116836.png" alt=""></button>
                 <button><img src="https://cdn-icons-png.flaticon.com/512/126/126482.png" alt=""></button>
             </div>
+            <p id="no-result"></p>
             <h3>Vos recherches favorites</h3>
             <div class="fav-container">
                 <div class="fav">
@@ -31,16 +33,17 @@
                     <p>Recherche 3</p>
                     <button class="fav-btn">×</button>
                 </div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="cat-btn" id="cat-2"><div class="opacity"><p>Missions</p></div></button>
+                <button class="cat-btn" id="cat-1"><div class="opacity"><p>Mots clés</p></div></button>
+                <button class="cat-btn" id="cat-3"><div class="opacity"><p>Photographes</p></div></button>
             </div>
         </div>
-        <div class="btn-container">
-            <button class="cat-btn" id="cat-2"><div class="opacity"><p>Missions</p></div></button>
-            <button class="cat-btn" id="cat-1"><div class="opacity"><p>Mots clés</p></div></button>
-            <button class="cat-btn" id="cat-3"><div class="opacity"><p>Photographes</p></div></button>
+        <div class="result-container">
+            
         </div>
-    </div>
-    <div class="result-container">
-        
     </div>
 </body>
 <script src="../style/transition.js"></script>
