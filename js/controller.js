@@ -32,9 +32,23 @@ let deleteClickListeners = function(event) {
     let fav = event.target.parentNode;
     //récupération de la valeur du favoris
     fav = fav.firstChild.innerHTML;
-    console.log(fav);
     //suppression du favoris
     recherche.deleteFav(fav);
     //Mis à jour de la vue
     view.updateFavFrom(recherche);
+}
+
+let searchClickListeners = function(event) {
+    //récupération de la balise a du bouton
+    let fav = event.target.parentNode;
+    //récupération de la valeur du favoris
+    fav = fav.firstChild.innerHTML;
+    //On set la valeur de la recherche dans l'objet
+    recherche.setInput(fav);
+     //On lance la recherche
+     recherche.search()
+     .then(() => {
+         //Mis à jour de la vue
+         view.updateFrom(recherche);
+     });
 }

@@ -57,6 +57,7 @@ const view = {
 
     updateFavFrom(recherche) {
         this.favOutput.innerHTML = "";
+        this.SearchBar.value = "";
         //boucle de parcours de l'input
         for(let i = 0; i < recherche.getFavs().length; i++) {
             //Création de plusieurs éléments html pour afficher les résultats
@@ -68,6 +69,7 @@ const view = {
             favDeleteButton.setAttribute("class", "fav-btn");
             //ajout de l'event listener
             favDeleteButton.addEventListener("click", deleteClickListeners);
+            fav.addEventListener("click", searchClickListeners);
             //Ajout des enfants à la div principal
             this.favOutput.appendChild(fav);
             fav.appendChild(favText);
