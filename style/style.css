@@ -59,7 +59,7 @@
 .btn {
     font-size: calc(0.2em + 0.5vw);
     position: relative;
-    padding: calc(0.5em + 0.5vw) calc(1.5em + 1vw);
+    padding: calc(0.5em + 0.2vw) calc(1.5em + 1vw);
     border-radius: calc(5em + 0.5vw);
     background-color: transparent;
     color: #fafafa;
