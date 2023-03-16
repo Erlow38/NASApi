@@ -54,10 +54,13 @@ let deleteClickListeners = function(event) {
     let fav = event.target.parentNode;
     //récupération de la valeur du favoris
     fav = fav.firstChild.innerHTML;
-    //suppression du favoris
-    recherche.deleteFav(fav);
-    //Mis à jour de la vue
-    view.updateFavFrom(recherche);
+    //Confirmation de la suppression
+    if (confirm("Voulez-vous supprimer " + fav + " de vos favoris ?")){
+        //suppression du favoris
+        recherche.deleteFav(fav);
+        //Mis à jour de la vue
+        view.updateFavFrom(recherche);
+    }
 }
 
 // - Pour les boutons de recherche de favoris
