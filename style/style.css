@@ -199,6 +199,7 @@
 .fav-btn {
     width: 30px;
     height: 100%;
+    cursor: pointer;
 }
 .cat-btn {
     transform: rotate(-10deg);
