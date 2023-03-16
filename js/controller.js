@@ -1,6 +1,9 @@
 //Initialisation de l'objet de requête
 let recherche = new Recherche();
 
+//### Initialisation des events listeners ###
+// - Pour le bouton de recherche
+
 view.SearchBar.addEventListener("focus", function() {
     // Lorsque la souris entre dans la barre de recherche
     document.addEventListener("keydown", function(event) {
@@ -21,8 +24,6 @@ view.SearchBar.addEventListener("focus", function() {
     });
 });
 
-//### Initialisation des events listeners ###
-// - Pour le bouton de recherche de misions
 view.SearchButton.addEventListener("click", function() {
     //On récupère la valeur de la barre de recherche
     let searchValue = view.SearchBar.value;
@@ -53,10 +54,13 @@ let deleteClickListeners = function(event) {
     let fav = event.target.parentNode;
     //récupération de la valeur du favoris
     fav = fav.firstChild.innerHTML;
-    //suppression du favoris
-    recherche.deleteFav(fav);
-    //Mis à jour de la vue
-    view.updateFavFrom(recherche);
+    //Confirmation de la suppression
+    if (confirm("Voulez-vous supprimer " + fav + " de vos favoris ?")){
+        //suppression du favoris
+        recherche.deleteFav(fav);
+        //Mis à jour de la vue
+        view.updateFavFrom(recherche);
+    }
 }
 
 // - Pour les boutons de recherche de favoris
