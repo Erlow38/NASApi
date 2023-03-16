@@ -164,6 +164,7 @@
     align-items: center;
     height: 100%;
     flex-wrap: wrap;
+    color: #cdcdcd;
 }
 .fav {
     display: flex;
