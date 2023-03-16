@@ -307,6 +307,10 @@
     height: 100%;
     border: none;
     cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.searchbar-container button:hover {
+    background-color: #cdcdcd;
 }
 .searchbar-container button:active {
     scale: 0.9;
