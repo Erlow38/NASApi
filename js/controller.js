@@ -57,12 +57,13 @@ let searchClickListeners = function(event) {
 
 // - Pour le lancement de la recherche avec la touche entrée
 document.addEventListener("DOMContentLoaded", async() => { 
+    console.log(recherche.getFavs());
     //Réinitialisation de la liste des favoris
-    recherche.setFavs([]);
+    //recherche.setFavs([]);
     //Récupération des favoris enregistrés dans le localStorage
     recherche.getLocalStorage();
     //parse de l'objet JSON récupéré
-    let favs = JSON.parse(localStorage.getItem("favs"));
+    let favs = JSON.parse(localStorage.getItem("favs")) || [];
     console.log(favs);
     //set des favoris dans l'objet recherche
     recherche.setFavs(favs);

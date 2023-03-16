@@ -80,12 +80,8 @@ class Recherche {
         this._favs = favs;
     }
 
-    /**
-     * Ajoute un bouton de favoris
-     * @param {string} fav
-     * @returns {void}
-    */
     addFav(fav) {
+        //ajout du favoris dans l'array des favoris
         this._favs.push(fav);
     }
 
