@@ -19,6 +19,12 @@ class Recherche {
     */
     _favs;
 
+    /**
+     * Les favoris enregistrés dans le localStorage
+     * @type {Array}
+    */
+    _localStorage;
+
     constructor() {
         this._input = "";
         this._result = {};
@@ -67,12 +73,38 @@ class Recherche {
     }
 
     /**
+     * Nouvelle liste de favoris
+     * @param {Array} favs
+    */
+    setFavs(favs) {
+        this._favs = favs;
+    }
+
+    /**
      * Ajoute un bouton de favoris
      * @param {string} fav
      * @returns {void}
     */
     addFav(fav) {
         this._favs.push(fav);
+    }
+
+    /**
+     * Retourne les favoris enregistrés dans le localStorage
+     * @returns {Array}
+     * @returns {void}
+    */
+    getLocalStorage() {
+        return this._localStorage;
+    }
+
+    /**
+     * Enregistre les favoris dans le localStorage
+     * @param {Array} favs
+     * @returns {void}
+    */
+    setLocalStorage(favs) {
+        localStorage.setItem("favs", JSON.stringify(favs));
     }
 
     deleteFav(fav) {
@@ -82,13 +114,14 @@ class Recherche {
             if (this._favs[i] == fav) {
                 //suppression du favoris
                 this._favs.splice(i,1);
+                localStorage.removeItem("favs");
             }
         }
     }
 
     search() {
         // Récupère les infos du contact ayant le nom 'rave'
-        return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=10&title=" + this._input)
+        return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=100&title=" + this._input)
         .then((responseObj) => responseObj.json())
         .then((data) => {
             let tab = data.collection.items;

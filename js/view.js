@@ -78,5 +78,7 @@ const view = {
             favText.innerHTML = recherche.getFavs()[i];
             favDeleteButton.innerHTML = "×";
         }
+        //set du local storage
+        recherche.setLocalStorage(recherche.getFavs());
     },
 }

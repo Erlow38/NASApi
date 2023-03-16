@@ -27,6 +27,7 @@ view.favButton.addEventListener("click", function() {
     view.updateFavFrom(recherche);
 });
 
+// - Pour les boutons de suppression de favoris
 let deleteClickListeners = function(event) {
     //récupération de la balise a du bouton
     let fav = event.target.parentNode;
@@ -38,6 +39,7 @@ let deleteClickListeners = function(event) {
     view.updateFavFrom(recherche);
 }
 
+// - Pour les boutons de recherche de favoris
 let searchClickListeners = function(event) {
     //récupération de la balise a du bouton
     let fav = event.target.parentNode;
@@ -52,3 +54,18 @@ let searchClickListeners = function(event) {
          view.updateFrom(recherche);
      });
 }
+
+// - Pour le lancement de la recherche avec la touche entrée
+document.addEventListener("DOMContentLoaded", async() => { 
+    //Réinitialisation de la liste des favoris
+    recherche.setFavs([]);
+    //Récupération des favoris enregistrés dans le localStorage
+    recherche.getLocalStorage();
+    //parse de l'objet JSON récupéré
+    let favs = JSON.parse(localStorage.getItem("favs"));
+    console.log(favs);
+    //set des favoris dans l'objet recherche
+    recherche.setFavs(favs);
+    //Mis à jour de la vue
+    view.updateFavFrom(recherche);
+});
