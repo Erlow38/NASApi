@@ -58,6 +58,9 @@ const view = {
     updateFavFrom(recherche) {
         this.favOutput.innerHTML = "";
         this.SearchBar.value = "";
+        if(recherche.getFavs().length === 0) {
+            this.favOutput.innerHTML = "Aucun favoris";
+        }
         //boucle de parcours de l'input
         for(let i = 0; i < recherche.getFavs().length; i++) {
             //Création de plusieurs éléments html pour afficher les résultats
@@ -80,5 +83,6 @@ const view = {
         }
         //set du local storage
         recherche.setLocalStorage(recherche.getFavs());
+        
     },
 }

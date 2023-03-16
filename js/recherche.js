@@ -81,8 +81,12 @@ class Recherche {
     }
 
     addFav(fav) {
+        //si fav est déjà dans l'array des favoris
+        if (!this._favs.includes(fav)) {
+            //on sort de la fonction
+            this._favs.push(fav);
+        }
         //ajout du favoris dans l'array des favoris
-        this._favs.push(fav);
     }
 
     /**
