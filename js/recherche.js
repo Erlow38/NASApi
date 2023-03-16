@@ -119,6 +119,19 @@ class Recherche {
         }
     }
 
+    isFav(fav) {
+        //parcours de l'array des favoris
+        for (let i = 0; i < this._favs.length; i++) {
+            //si le favoris est trouvé
+            if (this._favs[i] == fav) {
+                //retourne true
+                return true;
+            }
+        }
+        //retourne false
+        return false;
+    }
+
     search() {
         // Récupère les infos du contact ayant le nom 'rave'
         return fetch("https://images-api.nasa.gov/search?keywords=" + this._input + "&media_type=image&page_size=100&title=" + this._input)

@@ -82,7 +82,9 @@ const view = {
             favDeleteButton.innerHTML = "×";
         }
         //set du local storage
-        recherche.setLocalStorage(recherche.getFavs());
-        
+        recherche.setLocalStorage(recherche.getFavs()); 
     },
+
+    updateColorButtonFav(recherche) {
+    }
 }

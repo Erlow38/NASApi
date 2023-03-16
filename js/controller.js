@@ -24,6 +24,23 @@ view.SearchBar.addEventListener("focus", function() {
     });
 });
 
+// Pour la comparaison entre le champ et input et les favoris
+view.SearchBar.addEventListener("keyup", function(event) {
+    if(event.key != "Enter") {
+        //Récupération de la valeur de la barre de recherche
+        let searchValue = view.SearchBar.value;
+        //Comparaison avec les favoris
+        recherche.isFav(searchValue);
+        if(recherche.isFav(searchValue) === true){
+            //Si le résultat est un favoris
+            console.log("C'est un favoris");
+        }else{
+            //Si le résultat n'est pas un favoris
+            console.log("Ce n'est pas un favoris");
+        }
+    }
+});
+
 view.SearchButton.addEventListener("click", function() {
     //On récupère la valeur de la barre de recherche
     let searchValue = view.SearchBar.value;
