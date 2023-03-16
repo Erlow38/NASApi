@@ -59,7 +59,7 @@ const view = {
         this.favOutput.innerHTML = "";
         this.SearchBar.value = "";
         if(recherche.getFavs().length === 0) {
-            this.favOutput.innerHTML = "Aucun favoris";
+            this.favOutput.innerHTML = "Aucune recherche favorite";
         }
         //boucle de parcours de l'input
         for(let i = 0; i < recherche.getFavs().length; i++) {
