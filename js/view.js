@@ -69,7 +69,7 @@ const view = {
             favDeleteButton.setAttribute("class", "fav-btn");
             //ajout de l'event listener
             favDeleteButton.addEventListener("click", deleteClickListeners);
-            fav.addEventListener("click", searchClickListeners);
+            favText.addEventListener("click", searchClickListeners);
             //Ajout des enfants à la div principal
             this.favOutput.appendChild(fav);
             fav.appendChild(favText);
