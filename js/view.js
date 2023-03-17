@@ -91,6 +91,14 @@ const view = {
     },
 
     updateColorButtonFav(recherche, searchValue) {
+        //si le champ est vide ou si la recherche est déjà dans les favoris
+        if(this.SearchBar.value == "") {
+            this.favIcon.parentNode.style.display = "none";
+        }
+        else {
+            this.favIcon.parentNode.style.display = "block";
+        }
+        //si la recherche est déjà dans les favoris
         if(recherche.isFav(searchValue)) {
             this.favIcon.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/54/54583.png");
         }else{

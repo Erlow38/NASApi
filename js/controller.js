@@ -118,4 +118,5 @@ document.addEventListener("DOMContentLoaded", async() => {
     recherche.setFavs(favs);
     //Mis à jour de la vue
     view.updateFavFrom(recherche);
+    view.updateColorButtonFav(recherche, view.SearchBar.value);
 });

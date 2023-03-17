@@ -338,8 +338,12 @@
 /*affichage resultat*/
 
 #no-result {
+    font-size: calc(0.4em + 0.5vw);
     text-align: center;
     color: rgb(252, 85, 85);
+}
+#no-fav {
+    font-size: calc(0.4em + 0.5vw);
 }
 #bloc-gif-attente {
     display: none;
@@ -456,6 +460,9 @@
         height: 20%;
     }
     #no-fav {
+        font-size: 2em;
+    }
+    #no-result {
         font-size: 2em;
     }
     .fav {
