@@ -364,7 +364,7 @@
 }
 .result-content a {
     text-decoration: none;
-    color: #181818;
+    color: #000;
 }
 .result-content a:hover {
     text-decoration: underline;
