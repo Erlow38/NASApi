@@ -78,6 +78,8 @@ let deleteClickListeners = function(event) {
         recherche.deleteFav(fav);
         //Mis à jour de la vue
         view.updateFavFrom(recherche);
+        //Mise à jour de la couleur du bouton de favoris
+        view.updateColorButtonFav(recherche, view.SearchBar.value);
     }
 }
 
