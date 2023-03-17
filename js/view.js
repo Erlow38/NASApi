@@ -99,7 +99,7 @@ const view = {
             this.favIcon.parentNode.style.display = "block";
         }
         //si la recherche est déjà dans les favoris
-        if(recherche.isFav(searchValue)) {
+        if(recherche.isFav(searchValue.toLowerCase())) {
             this.favIcon.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/54/54583.png");
         }else{
             this.favIcon.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/126/126482.png");

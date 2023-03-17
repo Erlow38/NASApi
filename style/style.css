@@ -68,10 +68,10 @@
     text-decoration: none;
 }
 .btn {
-    font-size: calc(0.2em + 0.5vw);
+    font-size: calc(0.2em + 0.2vw);
     position: relative;
-    padding: calc(0.5em + 0.2vw) calc(1.5em + 1vw);
-    border-radius: calc(5em + 0.5vw);
+    padding: calc(0.3em + 0.2vw) calc(1.5em + 1vw);
+    border-radius: 20px;
     background-color: transparent;
     color: #fafafa;
     border: solid 3px rgba(250, 250, 250, 0.9);
