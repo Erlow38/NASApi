@@ -4,28 +4,26 @@ let recherche = new Recherche();
 //### Initialisation des events listeners ###
 // - Pour le bouton de recherche
 
-view.SearchBar.addEventListener("focus", function() {
-    // Lorsque la souris entre dans la barre de recherche
-    document.addEventListener("keydown", function(event) {
-        //Si la touche entrée est pressée
-        if (event.key === "Enter") {
-            //On récupère la valeur de la barre de recherche
-            let searchValue = view.SearchBar.value;
-            //On set la valeur de la recherche dans l'objet
-            recherche.setInput(searchValue);
-            //On affiche le loader
-            view.loading.style.display = "block";
-            console.log(recherche.getInput());
-            //On lance la recherche
-            recherche.search()
-            .then(() => {
-                //On cache le loader
-                view.loading.style.display = "none";
-                //Mis à jour de la vue
-                view.updateFrom(recherche);
-            });
-        }
-    });
+
+view.SearchBar.addEventListener("keydown", function(event) {
+    //Si la touche entrée est pressée
+    if (event.key === "Enter") {
+        //On récupère la valeur de la barre de recherche
+        let searchValue = view.SearchBar.value;
+        //On set la valeur de la recherche dans l'objet
+        recherche.setInput(searchValue);
+        //On affiche le loader
+        view.loading.style.display = "block";
+        console.log(recherche.getInput());
+        //On lance la recherche
+        recherche.search()
+        .then(() => {
+            //On cache le loader
+            view.loading.style.display = "none";
+            //Mis à jour de la vue
+            view.updateFrom(recherche);
+        });
+    }
 });
 
 // Pour la comparaison entre le champ et input et les favoris
