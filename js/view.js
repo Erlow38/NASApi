@@ -24,6 +24,9 @@ const view = {
     // Icon favoris
     favIcon: document.querySelector("#fav-icon"),
 
+    // Chargement
+    loading: document.querySelector("#bloc-gif-attente"),
+
     updateFrom(recherche) {
         this.output.innerHTML = "";
         //Vérification qu'il y a des résultats

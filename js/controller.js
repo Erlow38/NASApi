@@ -13,10 +13,14 @@ view.SearchBar.addEventListener("focus", function() {
             let searchValue = view.SearchBar.value;
             //On set la valeur de la recherche dans l'objet
             recherche.setInput(searchValue);
+            //On affiche le loader
+            view.loading.style.display = "block";
             console.log(recherche.getInput());
             //On lance la recherche
             recherche.search()
             .then(() => {
+                //On cache le loader
+                view.loading.style.display = "none";
                 //Mis à jour de la vue
                 view.updateFrom(recherche);
             });
@@ -38,10 +42,14 @@ view.SearchButton.addEventListener("click", function() {
     let searchValue = view.SearchBar.value;
     //On set la valeur de la recherche dans l'objet
     recherche.setInput(searchValue);
+    //On affiche le loader
+    view.loading.style.display = "block";
     console.log(recherche.getInput());
     //On lance la recherche
     recherche.search()
     .then(() => {
+        //On cache le loader
+        view.loading.style.display = "none";
         //Mis à jour de la vue
         view.updateFrom(recherche);
     });
@@ -83,12 +91,16 @@ let searchClickListeners = function(event) {
     view.SearchBar.value = fav;
     //On set la valeur de la recherche dans l'objet
     recherche.setInput(fav);
+    //On affiche le loader
+    view.loading.style.display = "block";
      //On lance la recherche
      recherche.search()
      .then(() => {
-         //Mis à jour de la vue
-         view.updateFrom(recherche);
-         view.updateColorButtonFav(recherche, fav);
+        //On cache le loader
+        view.loading.style.display = "none";
+        //Mis à jour de la vue
+        view.updateFrom(recherche);
+        view.updateColorButtonFav(recherche, fav);
      });
 }
 
