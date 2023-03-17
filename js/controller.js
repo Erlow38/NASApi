@@ -29,15 +29,7 @@ view.SearchBar.addEventListener("keyup", function(event) {
     if(event.key != "Enter") {
         //Récupération de la valeur de la barre de recherche
         let searchValue = view.SearchBar.value;
-        //Comparaison avec les favoris
-        recherche.isFav(searchValue);
-        if(recherche.isFav(searchValue) === true){
-            //Si le résultat est un favoris
-            console.log("C'est un favoris");
-        }else{
-            //Si le résultat n'est pas un favoris
-            console.log("Ce n'est pas un favoris");
-        }
+        view.updateColorButtonFav(recherche, searchValue);
     }
 });
 
@@ -63,6 +55,7 @@ view.favButton.addEventListener("click", function() {
     recherche.addFav(searchValue);
     //Mis à jour de la vue
     view.updateFavFrom(recherche);
+    view.updateColorButtonFav(recherche, searchValue);
 });
 
 // - Pour les boutons de suppression de favoris
@@ -86,6 +79,8 @@ let searchClickListeners = function(event) {
     let fav = event.target.parentNode;
     //récupération de la valeur du favoris
     fav = fav.firstChild.innerHTML;
+    //Afficher la recherche dans la barre de recherche
+    view.SearchBar.value = fav;
     //On set la valeur de la recherche dans l'objet
     recherche.setInput(fav);
      //On lance la recherche
@@ -93,6 +88,7 @@ let searchClickListeners = function(event) {
      .then(() => {
          //Mis à jour de la vue
          view.updateFrom(recherche);
+         view.updateColorButtonFav(recherche, fav);
      });
 }
 

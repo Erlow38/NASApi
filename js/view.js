@@ -21,6 +21,9 @@ const view = {
     // Bouton suppression favoris
     favDeleteButtons: document.querySelectorAll(".fav-btn") || "",
 
+    // Icon favoris
+    favIcon: document.querySelector("#fav-icon"),
+
     updateFrom(recherche) {
         this.output.innerHTML = "";
         //Vérification qu'il y a des résultats
@@ -57,7 +60,6 @@ const view = {
 
     updateFavFrom(recherche) {
         this.favOutput.innerHTML = "";
-        this.SearchBar.value = "";
         if(recherche.getFavs().length === 0) {
             this.favOutput.innerHTML = "Aucune recherche favorite";
         }
@@ -85,6 +87,12 @@ const view = {
         recherche.setLocalStorage(recherche.getFavs()); 
     },
 
-    updateColorButtonFav(recherche) {
+    updateColorButtonFav(recherche, searchValue) {
+        if(recherche.isFav(searchValue)) {
+            this.favIcon.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/54/54583.png");
+        }else{
+            this.favIcon.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/126/126482.png");
+        }
+        
     }
 }

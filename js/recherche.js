@@ -82,7 +82,7 @@ class Recherche {
 
     addFav(fav) {
         //si fav est déjà dans l'array des favoris
-        if (!this._favs.includes(fav)) {
+        if (!this._favs.includes(fav) && fav != "") {
             //on sort de la fonction
             this._favs.push(fav);
         }
