@@ -219,7 +219,6 @@
 }
 .cat-btn:hover {
     transform: rotate(0deg) scale(1.1);
-    cursor: pointer;
 }
 .cat-btn:active {
     scale: 0.99;
