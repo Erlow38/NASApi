@@ -64,7 +64,7 @@ const view = {
     updateFavFrom(recherche) {
         this.favOutput.innerHTML = "";
         if(recherche.getFavs().length === 0) {
-            this.favOutput.innerHTML = "Aucune recherche favorite";
+            this.favOutput.innerHTML = '<p id="no-fav">Aucune recherche favorite</p>';
         }
         //boucle de parcours de l'input
         for(let i = 0; i < recherche.getFavs().length; i++) {

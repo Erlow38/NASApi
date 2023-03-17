@@ -191,6 +191,7 @@
 .fav a {
     font-size: calc(0.2em + 0.5vw);
     display: flex;
+    align-items: center;
     height: 100%;
     width: 100%;
     padding-left: 10px;
@@ -198,10 +199,11 @@
     align-items: center;
     color: #000;
 }
-.fav a {
-    font-size: calc(0.2em + 0.5vw);
-}
 .fav-btn {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 100%;
     cursor: pointer;
@@ -451,9 +453,11 @@
         font-size: 2.5em;
     }
     .fav-container {
-        font-size: 2em;
         flex-direction: row;
         height: 20%;
+    }
+    #no-fav {
+        font-size: 2em;
     }
     .fav {
         width: 300px;
